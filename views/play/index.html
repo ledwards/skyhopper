@@ -1,0 +1,26 @@
+<Title:>
+  Skyhopper: Game #{{gameId}}
+
+<Head:>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+  <script src="/javascripts/skyhopper.js"></script>
+
+<Body:>
+  <h1>Welcome ((_player.name))</h1>
+  <p><label>Your name: <input value="((_player.name))"></label>
+  <p>There are ((_game.playerCount)) players in the game:</p>
+
+  <div id="players">
+    <ul>
+      ((#_game.players))
+        <li>((.name))</li>
+      ((/))
+    </ul>
+  </div>
+
+  <div id="table">
+    <div class="card" style="top: ((_game.card.position.top)); left: ((_game.card.position.left));">
+      <img src="http://s3.amazonaws.com/ledwards-swccgvkit-production/card_images/744/thumbnail.gif" x-bind="mouseup:updateCard" />
+    </div>
+  </div>

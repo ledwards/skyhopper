@@ -1,10 +1,9 @@
 <Title:>
-  Skyhopper: Game #{{gameId}}
+  Skyhopper: Game #{{_game.id}}
 
-<Head:>
+<Scripts:>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-  <script src="/javascripts/skyhopper.js"></script>
 
 <Body:>
   <h1>Welcome ((_player.name))</h1>
@@ -20,7 +19,12 @@
   </div>
 
   <div id="table">
-    <div class="card" style="top: ((_game.card.position.top)); left: ((_game.card.position.left));">
-      <img src="http://s3.amazonaws.com/ledwards-swccgvkit-production/card_images/744/thumbnail.gif" x-bind="mouseup:updateCard" />
-    </div>
+    ((#_game.players))
+      ((.cards > card))
+    ((/))
+  </div>
+
+<card:>
+  <div class="card" id="((.domId))" data-owner-index="((.ownerIndex))" data-card-index="((.cardIndex))" style="top: ((.position.top)); left: ((.position.left));">
+    <img src="{{.thumbnail-url}}"/>
   </div>

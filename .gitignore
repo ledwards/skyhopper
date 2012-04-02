@@ -2,3 +2,4 @@
 node_modules
 public/gen
 public/javascripts/*.gz
+dump.rdb

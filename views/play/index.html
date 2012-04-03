@@ -7,22 +7,24 @@
   <script src="/javascripts/skyhopper.js"></script>
 
 <Body:>
-  <h1>Welcome ((_player.name))</h1>
-  <p><label>Your name: <input value="((_player.name))"></label>
-  <p>There are ((_game.playerCount)) players in the game:</p>
-
-  <div id="players">
-    <ul>
-      ((#_game.players))
-        <li>((.name))</li>
-      ((/))
-    </ul>
+  <div class="header">
+    <h1>Welcome ((_player.name))</h1>
+    <p>There are ((_game.playerCount)) players in the game:</p>
+    <p><label>Your name: <input value="((_player.name))"></label>
   </div>
-
-  <div id="table">
-    ((#_game.players))
-      ((.cards > card))
-    ((/))
+  <div class="content">
+    <div id="players">
+      <ul>
+        ((#_game.players))
+          <li>((.name))</li>
+        ((/))
+      </ul>
+    </div>
+    <div id="table">
+      ((#_game.players))
+        ((.cards > card))
+      ((/))
+    </div>
   </div>
 
 <card:>
